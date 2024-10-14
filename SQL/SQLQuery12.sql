@@ -3,7 +3,8 @@ SELECT TOP (1000) [SNO]
       ,[ITEMNAME]
       ,[SUMMARY]
       ,[IMAGE_URL]
-      ,[MRP]
+      ,[MRP]   
+      
   FROM [webdata].[dbo].[vissco]
   --- select mrp by use max
   select ITEMNAME, MAX(MRP)
