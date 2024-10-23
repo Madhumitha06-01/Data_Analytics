@@ -7,7 +7,7 @@ import requests
 # Set the path to the Chromedriver
 DRIVER_PATH = r'chromedriver-win64 (1)/chromedriver-win64/chromedriver.exe'
 
-# Create a Service object
+# Create a Service object  
 service = Service(executable_path=DRIVER_PATH)
 
 # Set up Chrome options
