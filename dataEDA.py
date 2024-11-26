@@ -14,4 +14,5 @@ sns.countplot(y='ITEMNAME', data=data, order=data['ITEMNAME'].value_counts().ind
 plt.title('Products details')
 plt.xlabel('count')
 plt.ylabel('Itemname')
+# show plot 
 plt.show()
