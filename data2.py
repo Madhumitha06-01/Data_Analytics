@@ -7,8 +7,9 @@ print(duplicates)
 df.drop_duplicates(inplace=True)
 # Print shape after removing duplicates
 data1 = df.fillna(method ='bfill')
-# console the data 
-print(data1)      
+# console the data1
+print(data1)     
+print("data:",data1) 
 # Check if DataFrame is not empty before saving
 if not df.empty:
     # Save the cleaned DataFrame to a new Excel file
