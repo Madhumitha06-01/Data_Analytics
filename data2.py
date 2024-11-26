@@ -7,6 +7,7 @@ print(duplicates)
 df.drop_duplicates(inplace=True)
 # Print shape after removing duplicates
 data = df.fillna(method ='bfill')
+# console the data 
 print(data)      
 # Check if DataFrame is not empty before saving
 if not df.empty:
