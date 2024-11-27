@@ -15,4 +15,5 @@ plt.title('Products details')
 plt.xlabel('count')
 plt.ylabel('Itemname')
 # show plot data new.....change
+# show plot ..
 plt.show()
