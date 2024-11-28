@@ -27,4 +27,12 @@ if not df_cleaned.empty:
     print("change2 in main")
 else:
     print("Cleaned DataFrame is empty. No data to save.")
+<<<<<<< Updated upstream
     print("hi")
+=======
+    print("     ")
+    print(" c2 ")
+    print("cherry pick")
+
+    
+>>>>>>> Stashed changes
