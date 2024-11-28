@@ -28,6 +28,4 @@ if not df_cleaned.empty:
     print("change2 in main")
 else:
     print("Cleaned DataFrame is empty. No data to save.")
-    print("     ")
-    print(" c2 ")
-    print("cherry pick")
+    print("hi")
