@@ -25,3 +25,4 @@ if not df_cleaned.empty:
     print(f"Cleaned data successfully saved to {output_file}")
 else:
     print("Cleaned DataFrame is empty. No data to save.")
+    print("     ")
