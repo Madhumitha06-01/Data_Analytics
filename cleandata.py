@@ -4,6 +4,7 @@ import pandas as pd
 try:
     df = pd.read_excel("vissco.xlsx")  # Load your original data
 except Exception as e:
+    print("Save the file ")
     print(f"Error loading the Excel file: {e}")
     exit()
 # Print initial shape and any missing values
