@@ -18,3 +18,4 @@ plt.ylabel('Itemname')
 # show plot ..
 plt.show()
 print("   ")
+print(   )
