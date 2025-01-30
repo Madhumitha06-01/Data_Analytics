@@ -1,29 +1,31 @@
 import pandas as pd
 
 # Read the Excel file
-df = pd.read_excel("vissco.xlsx")
+df = pd.read_excel("Master Copy of CITAACC LTMs - 09 Nov 24.xls")
 
-# Count and print duplicates
-duplicates = df.duplicated().sum()
-print(f"Number of duplicates: {duplicates}")
+# Clean columns "Name / Batch / Branch" by removing everything after the "/"
+for column in ['Name / Batch / Branch']:
+    if column in df.columns:
+        df[column] = df[column].str.split('/', n=1).str[0]  # Keep only the part before "/"
 
-# Drop duplicates
-df.drop_duplicates(inplace=True)
+# For the "Batch" column, add "19" only if the cell value is less than 3 digits
+for column in ['Batch']:
+    if column in df.columns:
+        df[column] = df[column].apply(lambda x: '19' + str(x) if len(str(x)) < 3 else str(x))  # Add "19" if < 3 digits
 
-# Fill NaN values for specified columns with 'N/A'
-newdata = df.fillna({'ITEMNAME': 'N/A', 'SUMMARY': 'N/A', 'CODE': 'N/A', 'DETAILS': 'N/A', 'SPECIFICATION': 'N/A','IMAGE_URL':'N/A'})
+# For the "Branch" column, add "19" before the value only if it's exactly 2 digits
+for column in ['Branch']:
+    if column in df.columns:
+        df[column] = df[column].apply(lambda x: '19' + str(x) if str(x).isdigit() and len(str(x)) == 2 else str(x))
 
-# Apply backward fill only to the 'MRP' column
-newdata['MRP'] = df['MRP'].fillna(method='ffill')
-
-# Print the new DataFrame
-print(newdata)
-print(f"Shape after cleaning: {newdata.shape}")
+# Print the cleaned DataFrame
+print(df)
+print(f"Shape after cleaning: {df.shape}")
 
 # Save the cleaned DataFrame to a new Excel file
-new_file_name = "cleaned_vissco.xlsx"
+new_file_name = "n_copy.xlsx"
 with pd.ExcelWriter(new_file_name, engine='openpyxl') as writer:
-    # Write the new DataFrame to a new sheet
-    newdata.to_excel(writer, sheet_name='CleanedData', index=False)
+    # Write the cleaned DataFrame to a new sheet
+    df.to_excel(writer, sheet_name='CleanedData', index=False)
 
 print(f"Cleaned data saved to {new_file_name}")

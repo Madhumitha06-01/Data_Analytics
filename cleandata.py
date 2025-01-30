@@ -23,12 +23,8 @@ if not df_cleaned.empty:
         df_cleaned.to_excel(writer, index=False, sheet_name='Cleaned Data')  # Save to a new sheet
 
     print(f"Cleaned data successfully saved to {output_file}")
-    print(" chnage1 in main")
-    print("change2 in main")
+    
 else:
     print("Cleaned DataFrame is empty. No data to save.")
-    print("     ")
-    print(" c2 ")
-    print("cherry pick")
-
+   
     
