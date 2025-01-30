@@ -23,7 +23,7 @@ print(df)
 print(f"Shape after cleaning: {df.shape}")
 
 # Save the cleaned DataFrame to a new Excel file
-new_file_name = "n_copy.xlsx"
+new_file_name = "new_copy.xlsx"
 with pd.ExcelWriter(new_file_name, engine='openpyxl') as writer:
     # Write the cleaned DataFrame to a new sheet
     df.to_excel(writer, sheet_name='CleanedData', index=False)
