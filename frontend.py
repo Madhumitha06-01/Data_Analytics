@@ -16,7 +16,3 @@ plt.xlabel('count')
 plt.ylabel('Itemname')
 # show plot @
 plt.show()
-print("   ")
-print(" change 2")
-print("change3 ")
-print("change4 ")
